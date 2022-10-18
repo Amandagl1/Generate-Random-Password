@@ -1,7 +1,7 @@
-var upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var lowerCase= "abcdefghijklmnopqrstuvwxyz"
-var numbers= "1234567890"
-var specialCharacters= "!@#$%^&*()<>?-=+_"
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+var numbers = "1234567890"
+var specialCharacters = "!@#$%^&*()<>?-=+_"
 var characterList = ""
 
 // Assignment Code
@@ -16,15 +16,49 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 var totalVal = 0;
 
 var includeUpper = "";
 var includeLower = "";
 var includeNumbers = "";
 var includeSpecial = "";
+
+function generatePassword() {
+  var passLength = prompt("Choose a password length! No less than 8 characters and more than 128 characters.");
+  if(passLength <= 8 || passLength >= 128) {
+    alert("Does not meet the accepted length!");
+    return generatePassword();
+  }
+
+  var upperTrue = confirm("Would you like to use Uppercase?");
+  if(upperTrue) {
+    characterList += includeUpper;
+    includeUpper = selectedCharacters[0];
+    totalVal++;
+  }
+
+  var lowerTrue = confirm("Would you like to use Lowercase?");
+  if(lowerTrue) {
+    characterList += lowerCase;
+    includeLower = selectedCharacters[1];
+    totalVal++;
+  }
+
+  var numTrue = confirm("Would you like to use Numbers?");
+  if(numTrue) {
+    characterList += numbers;
+    includeNumbers = selectedCharacters[2];
+    totalVal++;
+  }
+
+  var specialTrue = confirm("Would you like to use Special Characters?");
+  if(specialTrue) {
+    characterList += specialCharacters;
+    includeSpecial = selectedCharacters[3];
+    totalVal++;
+  }
+
+} 
 
 var selectedCharacters = [
     function getUpperTrue() {
@@ -42,45 +76,9 @@ var selectedCharacters = [
     
 ];
 
-function generatePassword() {
-  var length = prompt("Choose a password length! No less than 8 characters and more than 128 characters.");
-  if(length <= 8 || length >= 128) {
-    alert("Does not meet the accepted length!");
-    return generatePassword();
-  }
+//   for (var i = 0, n = password.length; i < length; i++); {
+//     totalVal += writePassword.generatePassword(Math.floor(Math.random() * n));
+//   }
 
-  var upperTrue = confirm("Would you like to use Uppercase?");
-  if(upperTrue) {
-  //  characterList += upperCase;
-  includeUpper = selectedCharacters[0];
-  totalVal++;
-  }
-
-  var lowerTrue = confirm("Would you like to use Lowercase?");
-  if(lowerTrue) {
-  //  characterList += lowerCase;
-  includeLower = selectedCharacters[1];
-  totalVal++;
-  }
-
-  var numTrue = confirm("Would you like to use Numbers?");
-  if(numTrue) {
-  //  characterList += numbers;
-  includeNumbers = selectedCharacters[2];
-  totalVal++;
-  }
-
-  var specialTrue = confirm("Would you like to use Special Characters?");
-  if(specialTrue) {
-  //  characterList += specialCharacters;
-  includeSpecial = selectedCharacters[3];
-  totalVal++;
-  }
-}
-//  for (var i = 0, n = randomPass.length; i < length; i++);
-//    characterList += password.randomPass(Math.floor(Math.random() * n));
-//  }
-//  return writePassword;
-
-
-return characterList;
+  // Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
