@@ -12,4 +12,4 @@
 
 ## Deployed Application
 
-See [Random Password Generator](https://amandagl1.github.io/Generate-Random-Password/) to interact with the deployed application!:blush:
+See [Random Password Generator]() to interact with the deployed application!:blush:
