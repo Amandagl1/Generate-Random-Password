@@ -49,3 +49,5 @@ writePassword();
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+Initial commit. Worked on code in downloaded zip file before cloning git repo. Copied and pasted work into repo. Created variables for lowercase, uppercase, numbers, and characters.
