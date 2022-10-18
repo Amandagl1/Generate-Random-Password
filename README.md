@@ -8,7 +8,7 @@
 
 ## Screenshot
 
-![Random Password Generator](/assets/images/Random20%Password20%Generator.png)
+![Random Password Generator](assets/images/Random20%Password20%Generator.jpeg)
 
 ## Deployed Application
 
